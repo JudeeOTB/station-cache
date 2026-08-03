@@ -1,0 +1,7 @@
+# SaftNative admins v1 -- adm:<pubkey-b32>:<stationID-b32>:<label>
+# Verwaltung: SaftProvider -> ADMIN-Tab (eintragen + SIGN & PUSH).
+# Signatur: admins.sig (Ed25519, LIC_PRIVKEY) -- ohne gueltige .sig ignoriert jeder Client die Liste.
+# NUR Pubkeys + StationIDs hier -- NIE Privkeys, NIE Klartext-Namen die nicht oeffentlich duerfen.
+ts:1785775707
+adm:Z0WWYBNGPM6F0873VJZ437WDFBFXGNG5FP0M91AC706BB84B15M0:63C4NYTFMGXJACQ67FHBB2Z8EK6EG2KW8ZYGPGCG565DW67WZ5FG:Saft
+adm:6SY1E1YH61VB5VEKVJ6DANT6GZQ12G337T4ZXT1JP2NVABMTG87G:VAJV22VD7SJ6KBXTBTWR5VASQH94SEWEDZCYEXCWB21ZBH92D4VG:Shax

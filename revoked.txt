@@ -1,0 +1,30 @@
+# revoked.txt -- SPERRLISTE (Revocation) fuer SaftLauncher/SaftNative.
+# ================================================================================
+# Diese Datei ist die QUELLDATEI beim Anbieter (hier in STANDALONE\ pflegen!).
+# publish_update.ps1 signiert sie automatisch (revoked.sig, Ed25519 wie bei
+# station-setup.sig) und pusht beides ins Update-Repo station-cache.
+# Der Launcher laedt sie vor jedem Inject (Signaturpflicht, Cache in
+# %APPDATA%\SaftNative); die DLL prueft zusaetzlich den Cache (zweite Mauer).
+#
+# !!! ACHTUNG: Diese Datei wird 1:1 OEFFENTLICH gepusht (station-cache ist public).
+# Keine Klarnamen, Discord-Namen oder sonstige Kundendaten in Kommentare oder
+# Eintraege schreiben! Nur mid:/key:-Zeilen — die sind Einweg-Hashes und sicher.
+# Notizen zu Kunden GEHÖREN NUR in die lokale issued_keys.csv, nicht hierher.
+#
+# FORMAT (ein Eintrag pro Zeile, Kommentare mit '#', Leerzeilen egal):
+#
+#   mid:<StationID>        sperrt die MASCHINE komplett (alle Keys darauf).
+#                          StationID = die Base32-ID, die der Launcher dem Kunden
+#                          anzeigt (mit oder ohne '-'-Gruppierung, Gross/Klein egal).
+#
+#   key:<hash>             sperrt NUR diesen einen Key. Den fertigen hash liefert:
+#                            SaftKeygen.exe inspect --key <KeyString>
+#                          (zeigt Buyer, StationID, Daten + beide revoked-Zeilen).
+#
+# BEISPIEL:
+#   mid:ABCDE-12345-FGHIJ-67890-KLMNO-PQRST-UVWXY-Z2345-6789A-BCDEF-G
+#   key:0123456789ABCDEFGHJKMNPQRSTVWXYZ0123456789ABCDEFGHJKMN
+#
+# WICHTIG: Eintraege wirken erst nach dem naechsten publish (Signatur + Push).
+# Ohne revoked.sig oder bei ungueltiger Signatur wird die Liste IGNORIERT.
+# ================================================================================
