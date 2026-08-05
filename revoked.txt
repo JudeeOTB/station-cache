@@ -28,3 +28,4 @@
 # WICHTIG: Eintraege wirken erst nach dem naechsten publish (Signatur + Push).
 # Ohne revoked.sig oder bei ungueltiger Signatur wird die Liste IGNORIERT.
 # ================================================================================
+mid:938BXSMB4J02MN8G89BF13QFK2Q38CAWBDAAZFX7BGZ4D0WXK6W0
