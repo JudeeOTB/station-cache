@@ -29,3 +29,4 @@
 # Ohne revoked.sig oder bei ungueltiger Signatur wird die Liste IGNORIERT.
 # ================================================================================
 mid:938BXSMB4J02MN8G89BF13QFK2Q38CAWBDAAZFX7BGZ4D0WXK6W0
+key:9MCXAV6Y05HHB5JY1ZGXSJRQ20G6SNBR58XFSQVSCG8Z6CYE1PS0
