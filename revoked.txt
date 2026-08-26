@@ -1,0 +1,61 @@
+# revoked.txt -- SPERRLISTE (Revocation) fuer SaftLauncher/SaftNative.
+# ================================================================================
+# Diese Datei ist die QUELLDATEI beim Anbieter (hier in STANDALONE\ pflegen!).
+# publish_update.ps1 signiert sie automatisch (revoked.sig, Ed25519 wie bei
+# station-setup.sig) und pusht beides ins Update-Repo station-cache.
+# Der Launcher laedt sie vor jedem Inject (Signaturpflicht, Cache in
+# %APPDATA%\SaftNative); die DLL prueft zusaetzlich den Cache (zweite Mauer).
+#
+# !!! ACHTUNG: Diese Datei wird 1:1 OEFFENTLICH gepusht (station-cache ist public).
+# Keine Klarnamen, Discord-Namen oder sonstige Kundendaten in Kommentare oder
+# Eintraege schreiben! Nur mid:/key:-Zeilen — die sind Einweg-Hashes und sicher.
+# Notizen zu Kunden GEHÖREN NUR in die lokale issued_keys.csv, nicht hierher.
+#
+# FORMAT (ein Eintrag pro Zeile, Kommentare mit '#', Leerzeilen egal):
+#
+#   mid:<StationID>        sperrt die MASCHINE komplett (alle Keys darauf).
+#                          StationID = die Base32-ID, die der Launcher dem Kunden
+#                          anzeigt (mit oder ohne '-'-Gruppierung, Gross/Klein egal).
+#
+#   key:<hash>             sperrt NUR diesen einen Key. Den fertigen hash liefert:
+#                            SaftKeygen.exe inspect --key <KeyString>
+#                          (zeigt Buyer, StationID, Daten + beide revoked-Zeilen).
+#
+#   sid:<SteamID64>        sperrt den STEAM-ACCOUNT (DLL-seitig ab v46; aeltere
+#                          Clients ignorieren die Zeile still). Fuer Faelle, in
+#                          denen weder Key noch StationID bekannt sind (Resale).
+#
+# BEISPIEL:
+#   mid:ABCDE-12345-FGHIJ-67890-KLMNO-PQRST-UVWXY-Z2345-6789A-BCDEF-G
+#   key:0123456789ABCDEFGHJKMNPQRSTVWXYZ0123456789ABCDEFGHJKMN
+#
+# WICHTIG: Eintraege wirken erst nach dem naechsten publish (Signatur + Push).
+# Ohne revoked.sig oder bei ungueltiger Signatur wird die Liste IGNORIERT.
+# ================================================================================
+mid:938BXSMB4J02MN8G89BF13QFK2Q38CAWBDAAZFX7BGZ4D0WXK6W0
+key:9MCXAV6Y05HHB5JY1ZGXSJRQ20G6SNBR58XFSQVSCG8Z6CYE1PS0
+sid:76561199502220060
+sid:76561199039002669
+sid:76561199815906952
+sid:76561199697372261
+mid:1RA1CD2CR866VBFHT0AHDRY2X5HZ58W8BSPKCT1Z5SMD7PM53KV0
+key:CJ75CCGVHTX579F8SNATD5MGRMFTF4YWE407YEHNVKJGPCMZHXPG
+sid:76561198748182884
+mid:DMTXAXBWM0RHVP62KSQSW3V9YYVM2PM0H8HBFBW3Z8Z7P7J7SWD0
+sid:76561198903902669
+sid:76561199815906052
+sid:76561199793469042
+sid:76561199827415815
+sid:76561199501736791
+mid:XMBP2FSKA5CD4GF058VECVHFEM9AJH2PTR4NAQ8DN3SEQ23S269G
+sid:76561199196531997
+mid:S4N64SQ1D1SY834PXVQ8MEAJC6QJ5PPJ1WJV71VV9TC6NE82G190
+mid:4P2XYZX37R7TCZC1YQZGKWAYT2BSA15A9DECVBQ81KCHRKZ8V70G
+sid:76561199533123864
+mid:GH3TV8S6FE2ARHFGVM15CQE878BN5R3RWHK9DB7YC7F2CC3DGEA0
+mid:BGTKWD7GE01VXEGGY2X9VAK8RVF24D0EWBX7EV0THH4PQ4CP8BB0
+sid:76561199084564436
+mid:TWNVMCXRSMK8CNRWG55AH3FD8RT9QN9TSMKNJYDK1TR15YRTNW20
+mid:1SG3MYFPRM78EQM9HRTW62RVB8HHGF0499VX22KTB8HJPAN71YY0
+mid:12RBBMPEJ2C857NZERZBKRS07P3Y794SBZS1XAHBF1VEBDFS40TG
+mid:91SYE2RZF6A7XQTJ1YSA5G20GWFV5CQF8GRKZKFBRPGYPG68C1AG
